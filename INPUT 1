@@ -1,0 +1,53 @@
+package labQuiz;
+import java.util.Scanner;
+public class LabTest1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner a = new Scanner(System.in);
+		
+		double totalPrice,price,sum,discount,afterDiscount;
+		int items, quantity;
+		double total = 0;
+		
+		
+		System.out.println("Enter the number of items: ");
+		items = a.nextInt();
+		
+		if (items > 3) 
+		{
+			System.out.println("Sorry, maximum number of items is 3");
+			return;
+		}
+		
+		for (int i = 0; i <items; i++) {
+			System.out.println("Enter quantity of items: ");
+			quantity = a.nextInt();
+			System.out.println("Enter price of item: ");
+			price = a.nextDouble();
+			
+			sum = quantity * price;
+			total = total + sum;
+			
+			sum = quantity * price;
+			total = total + sum;
+		}
+		
+		if (total > 100) 
+		{
+			discount = total * 0.2;
+			afterDiscount = total - discount;
+		}
+		else 
+		{
+			discount = total * 0.1;
+			afterDiscount = total - discount;
+		}
+		
+		System.out.println("Total price       : RM" + total);
+		System.out.println("Discount received : RM" + discount);
+		System.out.println("Price to be paid  : RM" + afterDiscount);
+	}
+
+}
